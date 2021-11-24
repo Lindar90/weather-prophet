@@ -1,3 +1,5 @@
+import { IPagination } from './common';
+
 export interface IWeatherEntry {
   station_id: number,
   place_name: string,
@@ -8,20 +10,6 @@ export interface IWeatherEntry {
   temperature_min: string,
   precipitation_probability: string,
   precipitation_mm: string,
-}
-
-// TODO move to common types
-export enum OrderBy {
-  ASC = 'ASC',
-  DESC = 'DESC',
-}
-
-// TODO move to common types
-interface IPagination<T extends object> {
-  order?: OrderBy,
-  page: number,
-  limit?: number,
-  filters?: T,
 }
 
 interface IWeatherEntriesFilter {
