@@ -2,7 +2,7 @@ import {
   IWeatherEntry,
   WeatherEntriesPagination,
   IWeatherEntryRepository,
-} from '../../types/services/IWeatherEntryRepository';
+} from '../../../types/services/IWeatherEntryRepository';
 import { AbstractRepository } from './AbstractRepository';
 
 export class WeatherEntryRepository extends AbstractRepository implements IWeatherEntryRepository {

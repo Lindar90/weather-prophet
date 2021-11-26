@@ -17,7 +17,7 @@ const fetchOptions = (searchTerm: string) => {
 
 const Template: Story<ComponentProps<typeof SearchableAsyncSelect>> = (args) => {
   const { value } = args;
-  const [selectedValue, setSelectedValue] = useState<string | object | null>(value ?? '');
+  const [selectedValue, setSelectedValue] = useState<string | null>((value as string) ?? '');
 
   return (
     <>

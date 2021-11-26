@@ -1,7 +1,7 @@
 import { CityRepository } from '../CityRepository';
-import { ICityRepository } from '../../../types/services/ICityRepository';
+import { ICityRepository } from '../../../../types/services/ICityRepository';
 import data from './data.test.json';
-import { Order } from '../../../types/services/common';
+import { Order } from '../../../../types/services/common';
 
 describe('CityRepository', () => {
   let repository: ICityRepository;

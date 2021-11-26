@@ -1,9 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { WeatherEntryRepository } from '../../../services/repositories/WeatherEntryRepository';
+import { WeatherEntryRepository } from '../../../api/services/repositories/WeatherEntryRepository';
 import data from '../data.json';
 import { IWeatherEntry, IWeatherEntryRepository } from '../../../types/services/IWeatherEntryRepository';
-import { validatePaginationRequest } from '../../../utils/validatePaginationRequest';
+import { validatePaginationRequest } from '../../../api/utils/validatePaginationRequest';
 import { IResponse } from '../../../types/api/common';
 
 type EntriesByCityResponse = IResponse<IWeatherEntry[]>;

@@ -1,5 +1,5 @@
-import { Order } from '../../types/services/common';
-import { IWeatherEntry } from '../../types/services/IWeatherEntryRepository';
+import { Order } from '../../../types/services/common';
+import { IWeatherEntry } from '../../../types/services/IWeatherEntryRepository';
 
 export abstract class AbstractRepository {
   constructor(

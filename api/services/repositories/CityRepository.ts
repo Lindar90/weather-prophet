@@ -1,6 +1,6 @@
-import { ICityPagination, ICityRepository } from '../../types/services/ICityRepository';
+import { ICityPagination, ICityRepository } from '../../../types/services/ICityRepository';
 import { AbstractRepository } from './AbstractRepository';
-import { Order } from '../../types/services/common';
+import { Order } from '../../../types/services/common';
 
 export class CityRepository extends AbstractRepository implements ICityRepository {
   getAllNames(pagination: ICityPagination): string[] {

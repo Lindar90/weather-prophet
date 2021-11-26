@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import { Order } from '../types/services/common';
+import { Order } from '../../types/services/common';
 
 export const validatePaginationRequest = (req: NextApiRequest, res: NextApiResponse) => {
   const {

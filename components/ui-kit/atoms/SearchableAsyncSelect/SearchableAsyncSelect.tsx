@@ -5,20 +5,20 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { debounce } from 'debounce';
 
-interface IProps {
+interface IProps<T> {
   label: string,
-  value: string | object | null,
-  onChange: (value: string | object | null) => void,
-  fetchOptions: (searchTerm: string) => Promise<(string | object)[]>
+  value: T | null,
+  onChange: (value: T | null) => void,
+  fetchOptions: (searchTerm: string) => Promise<T[]>
   searchThreshold?: number,
 }
 
-const SearchableAsyncSelect = (props: IProps) => {
+const SearchableAsyncSelect = <T,>(props: IProps<T>) => {
   const {
     label, value, fetchOptions, onChange, searchThreshold = 3,
   } = props;
 
-  const [options, setOptions] = useState<(string | object)[]>([]);
+  const [options, setOptions] = useState<T[]>([]);
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {

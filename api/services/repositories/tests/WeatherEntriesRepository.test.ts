@@ -1,5 +1,5 @@
 import { WeatherEntryRepository } from '../WeatherEntryRepository';
-import { Order } from '../../../types/services/common';
+import { Order } from '../../../../types/services/common';
 import data from './data.test.json';
 
 describe('WeatherEntryRepository', () => {
