@@ -1,15 +1,21 @@
 import type { NextPage } from 'next';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
-import { useContext, useState } from 'react';
+import { useRouter } from 'next/router';
 import SearchableAsyncSelect from '../components/ui-kit/atoms/SearchableAsyncSelect/SearchableAsyncSelect';
-import { IDiContainer, ServicesContext } from '../client/services';
+import { services, } from '../client/services';
 
 const Home: NextPage = () => {
-  const [selectedCity, setSelectedCity] = useState<string | null>('');
-  const { cityAPI } = useContext<IDiContainer>(ServicesContext);
+  const { cityAPI } = services;
 
   const fetchCities = async (searchTerm: string) => cityAPI.getCityNames(searchTerm);
+
+  const router = useRouter();
+  const redirectToCityPage = (name: string | null) => {
+    if (name === null) throw new Error('Selected city name can not be empty.');
+
+    return router.push(`/city/${name}`);
+  };
 
   return (
     <Box
@@ -25,9 +31,9 @@ const Home: NextPage = () => {
       >
         <SearchableAsyncSelect<string>
           label="Search by city name"
-          onChange={setSelectedCity}
+          onChange={redirectToCityPage}
           fetchOptions={fetchCities}
-          value={selectedCity}
+          value={null}
         />
       </Container>
     </Box>
