@@ -46,6 +46,7 @@ const Home: NextPage = () => {
             onChange={redirectToCityPage}
             fetchOptions={fetchCities}
             value={null}
+            searchThreshold={1}
           />
         </Container>
       </Box>
