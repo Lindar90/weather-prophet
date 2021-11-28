@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { IResponse } from '../../types/api/common';
-import { validatePaginationRequest } from '../../api/utils/validatePaginationRequest';
+import { validatePaginationRequest } from '../../server/utils/validatePaginationRequest';
 import { ICityRepository } from '../../types/services/ICityRepository';
-import { CityRepository } from '../../api/services/repositories/CityRepository';
+import { CityRepository } from '../../server/services/repositories/CityRepository';
 import data from './data.json';
 
 type CitiesResponse = IResponse<string[]>;
