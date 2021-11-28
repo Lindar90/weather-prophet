@@ -3,6 +3,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { ParsedUrlQuery } from 'querystring';
+import Head from 'next/head';
 import CurrentWeatherCard from '../../components/city/CurrentWeatherCard';
 import { services } from '../../client/services';
 import LastWeekWeather from '../../components/city/LastWeekWeather';
@@ -36,26 +37,36 @@ const City = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => 
   const [currentDay, ...restDays] = entries;
 
   return (
-    <Box
-      sx={{
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Container>
-        <Grid container spacing={2}>
-          <Grid item xs={12} md={4}>
-            <CurrentWeatherCard weatherEntry={currentDay} />
-          </Grid>
+    <>
+      <Head>
+        <title>
+          Weather in
+          {currentDay.place_name}
+        </title>
+        <meta name="description" content="Daily and weakly forecasts" />
+      </Head>
 
-          <Grid item xs={12} md={8}>
-            <LastWeekWeather weekDays={restDays} />
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item xs={12} md={4}>
+              <CurrentWeatherCard weatherEntry={currentDay} />
+            </Grid>
+
+            <Grid item xs={12} md={8}>
+              <LastWeekWeather weekDays={restDays} />
+            </Grid>
           </Grid>
-        </Grid>
-      </Container>
-    </Box>
+        </Container>
+      </Box>
+    </>
   );
 };
 

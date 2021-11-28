@@ -1,4 +1,6 @@
 import type { NextPage } from 'next';
+import Image from 'next/image';
+import Head from 'next/head';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
@@ -18,25 +20,36 @@ const Home: NextPage = () => {
   };
 
   return (
-    <Box
-      sx={{
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <Container
-        maxWidth="sm"
+    <>
+      <Head>
+        <title>The most precise weather forecast</title>
+        <meta name="description" content="Checkout  weather information for some cities in the Netherlands" />
+      </Head>
+
+      <Box
+        sx={{
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
       >
-        <SearchableAsyncSelect<string>
-          label="Search by city name"
-          onChange={redirectToCityPage}
-          fetchOptions={fetchCities}
-          value={null}
-        />
-      </Container>
-    </Box>
+        <Container
+          maxWidth="sm"
+        >
+          <Box sx={{ marginBottom: '30px' }}>
+            <Image src="/imgs/clouds.jpeg" width="552" height="305" alt="Magnificent sky" />
+          </Box>
+
+          <SearchableAsyncSelect<string>
+            label="Search by city name"
+            onChange={redirectToCityPage}
+            fetchOptions={fetchCities}
+            value={null}
+          />
+        </Container>
+      </Box>
+    </>
   );
 };
 

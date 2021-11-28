@@ -9,6 +9,7 @@ const EmbeddedMap = ({ place, latitude, longitude }: IProps) => {
 
   return (
     <iframe
+      loading="lazy"
       title="map"
       width="100%"
       height="250"
