@@ -7,8 +7,10 @@
     "start": "next start",
     "lint": "next lint",
     "test:unit": "jest --watch",
+    "test:e2e": "cypress run",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -35,6 +37,7 @@
     "@typescript-eslint/parser": "^5.4.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
+    "cypress": "^9.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-airbnb-typescript": "^16.0.0",

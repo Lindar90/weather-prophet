@@ -44,6 +44,7 @@ const SearchableAsyncSelect = <T,>(props: IProps<T>) => {
       )}
       filterOptions={(x) => x}
       value={value}
+      data-test="async-autocomplete"
       autoComplete
       includeInputInList
     />
