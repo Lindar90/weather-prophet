@@ -48,13 +48,13 @@ const City = (props: InferGetServerSidePropsType<typeof getServerSideProps>) => 
 
       <Box
         sx={{
-          height: '100vh',
+          minHeight: '100vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
       >
-        <Container>
+        <Container sx={{ margin: '40px 0' }}>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4}>
               <CurrentWeatherCard weatherEntry={currentDay} />
